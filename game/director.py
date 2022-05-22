@@ -1,62 +1,61 @@
 from game.word_bank import Words
 from game.letter_checker import Letters
-
+from game.terminalService import terminalService
+import random
 
 class Director:
-    """A person who directs the game. 
-    
-    The responsibility of a Director is to control the sequence of play.
-
-    Attributes:
-        Words: A list of word.
-        is_playing (boolean): Whether or not to keep playing.
-        terminal_service: For getting and displaying information on the terminal.
-    """
     def __init__(self):
-        """Constructs a new Director.
-        
-        Args:
-            self (Director): an instance of Director.
-        """
+
+        self._word_bank = Words
+        # self._letter_checker = Letters
+        self._terminalService = terminalService
         self._is_playing = True
-        self._terminal_service = TerminalService()
-    
+
     def start_game(self):
-        """Starts the game by running the main game loop.
-        
-        Args:
-            self (Director): an instance of Director.
-        """
         while self._is_playing:
             self._get_inputs()
             self._do_updates()
-            self._do_outputs()
-
+            # self._do_outputs()
+    
     def _get_inputs(self):
-        """Ask the user to guess a letter from a - z.
-
-        Args:
-            self (Director): An instance of Director.
-        """
-        self.guess = input('Guess a letter [a-z]: ')
+        while self._is_playing:
+            self.user_input = input('Guess a letter [a-z]: ')
+            return self.user_input
+        
         
     def _do_updates(self):
-        # line cut
-        pass
+        words = ['january', 'february', 'march']
+        self.random_word = random.choice(words)
 
-    def _do_outputs(self):
-        """Check if the puzzle is solved.
+        wrong_letter_count = 0
 
-        Args:
-            self (Director): An instance of Director.
-        """
-        if the puzzle is solve, the game is over. # condition: how to determine puzzle is solved? when all letter guess correctly.
-        print('Puzzle solved.')
-        if the player has no more parachute, the game is over. # condition: how to determine the game is over? when all the line is cut.
-        print('No more parachute. Game over.')
+        for self.random_word in self.random_word:
+            if self.user_input in self.random_word:
+                print(self.user_input, end=' ')
+            else:
+                print('_', end=' ')
+                wrong_letter_count = wrong_letter_count + 1 # If guess wrong, increase failure count by 1.
+        print('')
     
+        # failure_count = 6
+        
+
+        # # As long as the failure count is less than zero the game will keep going. Else, the game can continue.
+        # while failure_count > 0:
+        #     if wrong_letter_count == 0:
+        #         print('You won.')
+        #         break # If failure count still remain 0, break out from the loop.
 
 
+        # if self.user_input in self.random_word:
+        #     print('Correct guess.')
+        # else:
+        #     print(f'Incorrect. {failure_count} turn left.')
+        #     failure_count = failure_count - 1 # If guess correct, decrease failure count by 1.
 
+        # Whole collection of letter that has been guessed.
+        # letter_guessed = letter_guessed + self.user_input
+        
+        
 
     
