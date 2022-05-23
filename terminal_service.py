@@ -11,14 +11,14 @@ class terminalService:
         self.letter = ""
         self._board_list = []
         self._word_list = []
-        self.add_word()
+        self._add_word()
 
     def read_input(self):
         """Ask the user what letter they choose"""
         self.letter = input("Enter a letter: ")
         
 
-    def add_word(self):
+    def _add_word(self):
         """This will set the amount of lines the game board needs displayed."""
 
         length = int(len(self.word))
@@ -33,7 +33,7 @@ class terminalService:
 
         return self._word_list
     
-    def edit_board(self, letter):
+    def _edit_board(self, letter):
         """If the letter was correct, edit the board"""
 
         if letter in self._word_list:
@@ -48,7 +48,7 @@ class terminalService:
             return -1
         
     
-    def print_body(self, dead=False):
+    def _print_body(self, dead=False):
         """Print the body of the jumper"""
 
         if dead:
@@ -60,10 +60,10 @@ class terminalService:
             print(" /|\ ")
             print(" / \ ")
 
-    def print_board(self, letter=""):
+    def print_board(self):
         """This will take the other methods and print a game board"""
 
-        chosen_letter = self.edit_board(letter)
+        chosen_letter = self._edit_board(self.letter)
 
         length = int(len(self.word))
 
@@ -86,33 +86,21 @@ class terminalService:
             print(second)
             print(third)
             print(fourth)
-            self.print_body()
+            self._print_body()
         elif self._chances == 3:
             print(second)
             print(third)
             print(fourth)
-            self.print_body()
+            self._print_body()
         elif self._chances == 2:
             print(third)
             print(fourth)
-            self.print_body()
+            self._print_body()
         elif self._chances == 1:
             print(fourth)
-            self.print_body()
+            self._print_body()
         else:
-            self.print_body(True)
+            self._print_body(True)
 
         print()
-            
-            
-
-        
-
-self = terminalService()
-# self.print_body()
-self.print_board(letter="p")
-self.print_board(letter="o")
-self.print_board(letter="l")
-self.print_board(letter="y")
-    
     
