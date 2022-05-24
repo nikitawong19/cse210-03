@@ -1,24 +1,15 @@
-from dataclasses import replace
-
-
 class terminalService:
     """"""
 
     def __init__(self):
         """"""
-        self._chances = 4
-        self.word = "polly"
+        self.chances = 4
+        self.word = ""
         self.letter = ""
         self._board_list = []
         self._word_list = []
-        self._add_word()
-
-    def read_input(self):
-        """Ask the user what letter they choose"""
-        self.letter = input("Enter a letter: ")
-        
-
-    def _add_word(self):
+    
+    def add_word(self):
         """This will set the amount of lines the game board needs displayed."""
 
         length = int(len(self.word))
@@ -30,8 +21,6 @@ class terminalService:
             start = i - 1
             letter = slice(start, i)
             self._word_list.append(self.word[letter])
-
-        return self._word_list
     
     def _edit_board(self, letter):
         """If the letter was correct, edit the board"""
@@ -65,14 +54,11 @@ class terminalService:
 
         chosen_letter = self._edit_board(self.letter)
 
-        length = int(len(self.word))
-
-        for i in range(length):
+        for i in range(len(self._board_list)):
             print(self._board_list[i], end=" ")
         print()
         if chosen_letter == -1:
-            self._chances = self._chances - 1
-            print(self._chances)
+            self.chances = self.chances - 1
 
         first = " ___ "
         second = "/___\\"
@@ -81,22 +67,22 @@ class terminalService:
 
         print()
 
-        if self._chances == 4:
+        if self.chances == 4:
             print(first)
             print(second)
             print(third)
             print(fourth)
             self._print_body()
-        elif self._chances == 3:
+        elif self.chances == 3:
             print(second)
             print(third)
             print(fourth)
             self._print_body()
-        elif self._chances == 2:
+        elif self.chances == 2:
             print(third)
             print(fourth)
             self._print_body()
-        elif self._chances == 1:
+        elif self.chances == 1:
             print(fourth)
             self._print_body()
         else:
