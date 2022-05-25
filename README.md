@@ -8,7 +8,7 @@ You can also run the program from an IDE like Visual Studio Code. Start your IDE
 
 # Project Structure
 The project files and folders are organized as follows:
-
+```
 cse210-03               (project root folder)
 +-- game                (source code for game)
   +-- director          (specific classes)
@@ -17,7 +17,7 @@ cse210-03               (project root folder)
   +-- word_bank         (specific classes)
   +-- __main__.py       (program entry point)
 +-- README.md           (general info)
-
+```
 
 # Required Technologies
 * Python 3.8.0
@@ -29,12 +29,12 @@ cse210-03               (project root folder)
 
 
 # Contribution
-* Kaden Brown
+Kaden Brown
 - class Letters
 - class Words
 
-* Stephanie Clark
+Stephanie Clark
 - class TerminalService
 
-* Nikita Wong
+Nikita Wong
 - class Director
