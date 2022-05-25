@@ -1,6 +1,8 @@
 class terminalService:
-    """"""
-
+    """A service that handles terminal operations.
+    
+    The responsibility of a TerminalService is to provide input and output operations for the terminal.
+    """
     def __init__(self):
         """"""
         self.capitals=[0]
@@ -43,7 +45,6 @@ class terminalService:
         else:
             return -1
         
-    
     def _print_body(self, dead=False):
         """Print the body of the jumper"""
 

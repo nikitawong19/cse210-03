@@ -1,4 +1,5 @@
 import random
+
 class Words:
     def __init__(self):
         self.playing = 1
