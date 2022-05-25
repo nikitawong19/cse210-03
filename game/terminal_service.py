@@ -51,7 +51,7 @@ class terminalService:
             print("  X  ")
             print(" /|\ ")
             print(" / \ ")
-            print(f"The word was {self.word}")
+            print(f"The word was {self.word.capitalize()}")
         else:
             print("  0  ")
             print(" /|\ ")

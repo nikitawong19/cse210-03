@@ -22,11 +22,11 @@ class Director:
         Ask the user to guess a letter.
         """
         # while self._is_playing:
-        self._terminalService.letter = input('Guess a letter [a-z]: ')
+        self._terminalService.letter = str(input('Guess a letter [a-z]: ').lower())
         letter = self._terminalService.letter
         valid = self._letter_checker.letter_check(letter)
         while valid!=2:
-            self._terminalService.letter = input('Guess a letter [a-z]: ')
+            self._terminalService.letter = str(input('Guess a letter [a-z]: ').lower())
             letter = self._terminalService.letter
             valid = self._letter_checker.letter_check(letter)
         self._letter_checker.letters.append(self._terminalService.letter)
@@ -35,6 +35,10 @@ class Director:
         
     def _do_updates(self):
         self._terminalService.print_board()
+
+        if "_" not in self._terminalService._board_list:
+            self._is_playing = False 
+            print(f"Congrats you win!\nThe word was {self._terminalService.word.capitalize()}")
 
         if self._terminalService.chances == 0:
             self._is_playing = False
