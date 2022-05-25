@@ -3,6 +3,7 @@ class terminalService:
 
     def __init__(self):
         """"""
+        self.capitals=[0]
         self.chances = 4
         self.word = ""
         self.letter = ""
@@ -27,8 +28,11 @@ class terminalService:
 
         if letter in self._word_list:
             for index, elem in enumerate(self._word_list):
+                if elem =="-":
+                     self._board_list[index] = "-"
+                     self.capitals.append(index + 1)
                 if elem == letter:
-                    if index == 0:
+                    if index in self.capitals:
                         self._board_list[index] = self._word_list[index].capitalize()
                     else:
                         self._board_list[index] = self._word_list[index]

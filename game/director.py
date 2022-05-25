@@ -23,7 +23,14 @@ class Director:
         """
         # while self._is_playing:
         self._terminalService.letter = input('Guess a letter [a-z]: ')
+        letter = self._terminalService.letter
+        valid = self._letter_checker.letter_check(letter)
+        while valid!=2:
+            self._terminalService.letter = input('Guess a letter [a-z]: ')
+            letter = self._terminalService.letter
+            valid = self._letter_checker.letter_check(letter)
         self._letter_checker.letters.append(self._terminalService.letter)
+        
         # return self.user_input
         
     def _do_updates(self):
