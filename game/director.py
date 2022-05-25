@@ -7,7 +7,8 @@ class Director:
         self._word_bank = Words()
         self._letter_checker = Letters()
         self._terminalService = terminalService()
-        self.word = "polly"
+        self._terminalService.word = self._word_bank.random_word()
+        self._terminalService.add_word()
         self._is_playing = True
 
     def start_game(self):
@@ -26,15 +27,18 @@ class Director:
         # return self.user_input
         
     def _do_updates(self):
-        self._terminalService.word = self._word_bank.random_word()
         self._terminalService.print_board()
+
+        if self._terminalService.chances == 0:
+            self._is_playing = False
     
-        for self.random_word in self.random_word:
-            if self.user_input in self.random_word:
-                print(self.user_input, end=' ')
-            else:
-                print('_', end=' ')
-        print('')
+    
+        # for self.random_word in self.random_word:
+        #     if self.user_input in self.random_word:
+        #         print(self.user_input, end=' ')
+        #     else:
+        #         print('_', end=' ')
+        # print('')
     
     
         
