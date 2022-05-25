@@ -28,7 +28,10 @@ class terminalService:
         if letter in self._word_list:
             for index, elem in enumerate(self._word_list):
                 if elem == letter:
-                    self._board_list[index] = self._word_list[index]
+                    if index == 0:
+                        self._board_list[index] = self._word_list[index].capitalize()
+                    else:
+                        self._board_list[index] = self._word_list[index]
             
             return 0
         elif letter == "":
@@ -44,6 +47,7 @@ class terminalService:
             print("  X  ")
             print(" /|\ ")
             print(" / \ ")
+            print(f"The word was {self.word}")
         else:
             print("  0  ")
             print(" /|\ ")

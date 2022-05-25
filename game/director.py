@@ -7,7 +7,7 @@ class Director:
         self._word_bank = Words()
         self._letter_checker = Letters()
         self._terminalService = terminalService()
-        self._terminalService.word = self._word_bank.random_word()
+        self._terminalService.word = self._word_bank.random_word().lower()
         self._terminalService.add_word()
         self._is_playing = True
 
