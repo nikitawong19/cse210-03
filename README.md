@@ -1,5 +1,5 @@
 # Jumper
-Jumper is a game in which the player seeks to solve a puzzle by guessing the letters of a secret word one at a time.
+Jumper is a game in which the player seeks to solve a puzzle by guessing the letters of a secret word one at a time. If the letter's not in the puzzle, the parachute loses a line. Guessing continues until the puzzle is solved.
 
 ---
 ## Getting Started
