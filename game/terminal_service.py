@@ -47,7 +47,7 @@ class TerminalService:
         
         Args:
             self(TerminalService: An instance of TerminalService)
-            letter (string): The letter enter by the user.
+            letter (string): The letter entered by the user.
         """
         # If the letter is found in the word list.
         if letter in self._word_list:
@@ -85,7 +85,7 @@ class TerminalService:
         
         Args:
             self (TerminalService): An instance of TerminalService.
-            dead (boolean): Whether or not the jumper dead. 
+            dead (boolean): Whether or not the jumper is dead. 
         """
         # If the jumper is dead, print the body of the jumper and show the user the correct word.
         if dead:
