@@ -1,12 +1,12 @@
 import random
 
 class Words:
-    """A Word is a secret word that the user can guess.
+    """ Words selects a secret word for the user to guess.
     
-    The responsibility of a Word is to show a list a words that can be choose from.
+    The responsibility of Words is to show a list a words that can be choose from.
     """
     def __init__(self):
-        """Constructs a new Words.
+        """Constructs the secret word.
         
         Args:
             self (Word): An instance of Words.

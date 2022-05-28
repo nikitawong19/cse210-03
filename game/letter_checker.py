@@ -9,7 +9,7 @@ class Letters:
         Args:
             self (Letters): An instance of Letters.
         """
-        # A list of alphabet.
+        # A list of acceptable characters.
         self._alphabet =["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ""]
         
         # Put the guessed letter in an empty list.
@@ -33,12 +33,12 @@ class Letters:
         # If user guess the same letter again.
         if _letter in self._letters:
 
-            # Ask the user to guess again.
+            # Ask the user to guess a letter that hasen't been used yet.
             print("You've already guessed that letter. Please guess a new letter.")
             _guess = 1
             return _guess
         
-        # If the user guess correct letter, append the letter to the letter list.
+        # If the user guess correct letter, append the letter to the letter list to prevent them from guessing the same letter again later.
         else:
             self._letters.append(_letter)
             _guess = 2
