@@ -1,34 +1,41 @@
-# cse210-03
+# Jumper
+Jumper is a game in which the player seeks to solve a puzzle by guessing the letters of a secret word one at a time. If the letter's not in the puzzle, the parachute loses a line. Guessing continues until the puzzle is solved.
 
-main
-director
-terminalService
-set a word to guess
-keep track of all the letters that have been guessed
+---
+## Getting Started
+Make sure you have Python 3.8.0 or newer installed and running on your machine. Open a terminal and browse to the project's root folder. 
 
-kaden:
+You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the project folder. Select the main module inside the game folder and click the "run" icon.
 
-- Do words list
-- Keep track of letter
+## Project Structure
+The project files and folders are organized as follows:
+```
+cse210-03               (project root folder)
++-- game                (source code for game)
+  +-- director          (specific classes)
+  +-- letter_checker    (specific classes)
+  +-- terminal_service  (specific classes)
+  +-- word_bank         (specific classes)
+  +-- __main__.py       (program entry point)
++-- README.md           (general info)
+```
 
-stephanie:
+## Required Technologies
+* Python 3.8.0
 
-- TerminalService
+## Authors
+* Kaden Brown (bro22001@byui.edu)
+* Stephanie Clark (sclark@inventoryshield.com)
+* Nikita Wong (iamspecial19@gmail.com)
 
-What I will need
--DIRECTOR: I will need the prompt that will read to the terminal asking what letter they chose. `read_input("\n Enter a prompt")
 
-My methods:
-add_word(word): I will use this to add the word that was chosen to the game board. This should only need to be used at the start of the game. Using a method instead of an attribute should keep me from being a class into this one. This should contribute to encapsulation.
+## Contribution
+Kaden Brown
+- class Letters
+- class Words
 
-read_input(): This will read to the terminal asking the user for the letter they pick. Referring to the seeker game, I can get the prompt from Director
+Stephanie Clark
+- class TerminalService
 
-edit_board(outcome): This can be used to let me know if the letter the user entered was correct or incorrect. From there I can edit the board.
-
-add_list(lettersList): I can receive a list of the letters already guessed and add them to the list to use in the print_board() method
-
-print_board(list): Using the list I can place the letters into the appropriate places and print the board to the console.
-
-nikita:
-
-- Director
+Nikita Wong
+- class Director
