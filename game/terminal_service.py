@@ -55,13 +55,6 @@ class TerminalService:
             # enumerate() is a built-in function dealing with iterators and to keep a count of iterations. 
             for index, elem in enumerate(self._word_list):
 
-                # If element is equal to a dash "-"
-                if elem =="-":
-                     self._board_list[index] = "-"
-
-                     # Apend the 
-                     self.capitals.append(index + 1)
-
                 if elem == letter:
 
                     # If index is in the 
